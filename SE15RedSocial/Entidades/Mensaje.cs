@@ -14,7 +14,7 @@ namespace Entidades
         private int emisor;
         private int receptor;
         private string estampa;
-        private string mensaje;
+        private string msj;
         private string multimedia;
 
         #endregion
@@ -80,17 +80,17 @@ namespace Entidades
             }
         }
 
-        public string Mensaje
+        public string Msj
         {
             get
             {
-                return this.mensaje;
+                return this.msj;
             }
             set
             {
                 if (value != string.Empty)
                 {
-                    this.mensaje = value;
+                    this.msj = value;
                 }
             }
         }

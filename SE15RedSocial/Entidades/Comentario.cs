@@ -12,7 +12,7 @@ namespace Entidades
         private int id;
         private int publicacion;
         private int usuario;
-        private string comentario;
+        private string coment;
         private string estampa;
         private char estado;
         #endregion
@@ -63,17 +63,17 @@ namespace Entidades
             }
         }
 
-        public string Comentario
+        public string Coment
         {
             get
             {
-                return this.comentario;
+                return this.coment;
             }
             set
             {
                 if (value != string.Empty)
                 {
-                    this.comentario = value;
+                    this.coment = value;
                 }
             }
         }
@@ -113,7 +113,7 @@ namespace Entidades
             this.id = p_id;
             this.publicacion = p_publicacion;
             this.usuario = p_usuario;
-            this.comentario = p_comentario;
+            this.coment = p_comentario;
             this.estampa = p_estampa;
             this.estado = p_estado;
         }
