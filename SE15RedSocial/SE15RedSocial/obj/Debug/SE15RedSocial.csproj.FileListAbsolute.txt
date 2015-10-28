@@ -1,0 +1,6 @@
+C:\Users\Carlosg\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\SE15RedSocial\bin\SE15RedSocial.dll.config
+C:\Users\Carlosg\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\SE15RedSocial\bin\SE15RedSocial.dll
+C:\Users\Carlosg\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\SE15RedSocial\bin\SE15RedSocial.pdb
+C:\Users\Carlosg\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\SE15RedSocial\obj\Debug\SE15RedSocial.csprojResolveAssemblyReference.cache
+C:\Users\Carlosg\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\SE15RedSocial\obj\Debug\SE15RedSocial.dll
+C:\Users\Carlosg\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\SE15RedSocial\obj\Debug\SE15RedSocial.pdb
