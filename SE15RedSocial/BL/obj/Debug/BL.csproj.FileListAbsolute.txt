@@ -1,0 +1,4 @@
+C:\Users\Carlosg\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\BL\bin\Debug\BL.dll
+C:\Users\Carlosg\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\BL\bin\Debug\BL.pdb
+C:\Users\Carlosg\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\BL\obj\Debug\BL.dll
+C:\Users\Carlosg\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\BL\obj\Debug\BL.pdb

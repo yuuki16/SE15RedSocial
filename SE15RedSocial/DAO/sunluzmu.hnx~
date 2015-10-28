@@ -16,17 +16,15 @@ namespace DAO
         Boolean resultado;
         string sql;
 
-        public DataTable ObtenerUsuario(Usuario usuario)//Pendiente 
+        public Boolean ObtenerUsuario(Usuario usuario)
         {
             sql = "SP_ObtenerUsuario";
-            DataTable dt = new DataTable();
             try
             {
                 if (conn.abrirConexion() == true) {
                     SqlCommand comando = new SqlCommand(sql, conn.conn);
                     comando.Parameters.Add("@p_us_id", SqlDbType.Int).Value = usuario.Id;
-                    SqlDataAdapter adaptador = new SqlDataAdapter(comando);
-                    adaptador.Fill(dt);
+                    comando.ExecuteNonQuery();
                     resultado = true;
                 }
             }
@@ -35,7 +33,7 @@ namespace DAO
                 throw new Exception(ex.Message, ex);
             }
             conn.cerrarConexion();
-            return dt;
+            return resultado;
         }
 
         public Boolean AgregarUsuario(Usuario usuario)
@@ -130,6 +128,7 @@ namespace DAO
         {
 
             sql = "SP_LoginUsuario";
+
             try
             {
                 if (conn.abrirConexion() == true)
@@ -138,6 +137,7 @@ namespace DAO
                     comando.CommandType = CommandType.StoredProcedure;
                     comando.Parameters.Add("@p_us_correo", SqlDbType.VarChar).Value = usuario.Correo;
                     comando.Parameters.Add("@p_us_contrasena", SqlDbType.VarChar).Value = usuario.Contrasena;
+
                     comando.ExecuteNonQuery();
                     resultado = true;
                 }
