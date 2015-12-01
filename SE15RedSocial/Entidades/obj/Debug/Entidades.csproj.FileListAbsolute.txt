@@ -3,3 +3,5 @@ C:\Users\Michelle\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\En
 C:\Users\Michelle\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\Entidades\obj\Debug\Entidades.csproj.GenerateResource.Cache
 C:\Users\Carlosg\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\Entidades\obj\Debug\Entidades.Properties.Resources.resources
 C:\Users\Carlosg\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\Entidades\obj\Debug\Entidades.csproj.GenerateResource.Cache
+C:\Users\user-pc\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\Entidades\obj\Debug\Entidades.Properties.Resources.resources
+C:\Users\user-pc\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\Entidades\obj\Debug\Entidades.csproj.GenerateResource.Cache

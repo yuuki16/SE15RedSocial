@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace DAO
 {
     public class Conexion
     {
 
-        public SqlConnection conn;
+        public SqlConnection conn = new SqlConnection();
         Boolean resultado = false;
 
         public Boolean abrirConexion()
@@ -34,7 +35,7 @@ namespace DAO
 
             try
             {
-                if (conn != null)
+                if (conn.State == ConnectionState.Open)
 	            {
 		            conn.Close();
                     resultado = true;
