@@ -17,25 +17,26 @@ namespace DAO
         string sql;
         private DataSet ds = new DataSet();
 
-        public DataTable ObtenerUsuario(Usuario usuario) 
+        public DataSet ObtenerUsuario(Usuario usuario)
         {
             sql = "SP_ObtenerUsuario";
-            DataTable dt = new DataTable();
             try
             {
-                if (conn.abrirConexion() == true) {
+                if (conn.abrirConexion() == true)
+                {
                     SqlCommand comando = new SqlCommand(sql, conn.conn);
-                    comando.Parameters.Add("@p_us_id", SqlDbType.Int).Value = usuario.Id;
-                    foreach (SqlParameter Parameter in comando.Parameters)
+                    if (usuario.Correo == null)
                     {
-                        if (Parameter.Value == null)
-                        {
-                        Parameter.Value = DBNull.Value;
-                        }
+                        comando.Parameters.AddWithValue("@p_us_correo", DBNull.Value);
+                        comando.Parameters.Add("@p_us_nombre", SqlDbType.VarChar).Value = usuario.Nombre;
                     }
+                    else {
+                        comando.Parameters.Add("@p_us_correo", SqlDbType.VarChar).Value = usuario.Correo;
+                        comando.Parameters.AddWithValue("@p_us_nombre", DBNull.Value);
+                    }
+                    comando.CommandType = CommandType.StoredProcedure;
                     SqlDataAdapter adaptador = new SqlDataAdapter(comando);
-                    adaptador.Fill(dt);
-                    resultado = true;
+                    adaptador.Fill(ds, "Datos");
                 }
             }
             catch (Exception ex)
@@ -43,9 +44,8 @@ namespace DAO
                 throw new Exception(ex.Message, ex);
             }
             conn.cerrarConexion();
-            return dt;
+            return ds;
         }
-        
         public Boolean AgregarUsuario(Usuario usuario)
         {
            
@@ -110,9 +110,9 @@ namespace DAO
             return resultado;
         }
 
-        public Boolean InActivarUsuario(Usuario usuario)
+        public Boolean CambioEstadoUsuario(Usuario usuario)
         {
-            sql = "SP_InActivarUsuario";
+            sql = "SP_CambioEstadoUsuario";
             try
             {
                 if (conn.abrirConexion() == true) {

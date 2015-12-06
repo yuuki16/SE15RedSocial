@@ -12,27 +12,25 @@ namespace BL
 {
     public class BL_Usuario
     {
-
+        private DataSet ds = new DataSet();
         private Boolean resultado = false;
         private DAO_Usuario dao_usuario = new DAO_Usuario();
 
-        public DataTable ObtenerUsuario(Usuario usuario){
-        
-            DataTable dt = new DataTable();
-            
-            try 
-	        {	        
-		        dt = dao_usuario.ObtenerUsuario(usuario);
-	        }
-	        catch (Exception ex)
-	        {
-		        throw new Exception(ex.Message, ex);
-	        }
+        public DataSet ObtenerUsuario(Usuario usuario)
+        {
 
-            return dt;
-        
+            try
+            {
+                ds = dao_usuario.ObtenerUsuario(usuario);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+
+            return ds;
+
         }
-
         public int ObtenerIDUsuarrio(Usuario usuario)
         {
 
@@ -87,7 +85,7 @@ namespace BL
 
             try
             {
-                resultado = dao_usuario.InActivarUsuario(usuario);
+                resultado = dao_usuario.CambioEstadoUsuario(usuario);
             }
             catch (Exception ex)
             {

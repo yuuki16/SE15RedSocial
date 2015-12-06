@@ -20,9 +20,6 @@
                     <asp:LinkButton ID="lnkPerfil" runat="server" SkinId="toolbar_lnk" OnClick="lnkPerfil_Click">Perfil</asp:LinkButton>
                 </td>
                 <td>
-                    <asp:LinkButton ID="lnkNotificaciones" runat="server" SkinId="toolbar_lnk">Notificaciones</asp:LinkButton>
-                </td>
-                <td>
                     <asp:LinkButton ID="lnkSolicitudes" runat="server" SkinId="toolbar_lnk">Solicitudes</asp:LinkButton>
                 </td>
                 <td>
@@ -30,10 +27,10 @@
                 </td>
             </tr>
 
-        </table>
-            
-        <asp:TextBox runat="server" align="left" Width="316px"></asp:TextBox>
-        <asp:Button runat="server" Text="Buscar" Width="92px"/>
+        </table>    
+            <asp:ImageButton ID="ImageButton1" runat="server" />
+        <asp:TextBox id="txtBuscar" runat="server" align="left" Width="316px"></asp:TextBox>
+        <asp:Button runat="server" ID="btBuscar" Text="Buscar" Width="92px" OnClick="btBuscar_Click"/>
         </asp:ContentPlaceHolder>
          <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
              <p>
