@@ -33,6 +33,24 @@ namespace BL
         
         }
 
+        public int ObtenerIDUsuarrio(Usuario usuario)
+        {
+
+            int idUsuario;
+
+            try
+            {
+                idUsuario = dao_usuario.ObtenerIDUsuarrio(usuario);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+
+            return idUsuario;
+
+        }
+
         public Boolean AgregarUsuario(Usuario usuario){
         
             try 

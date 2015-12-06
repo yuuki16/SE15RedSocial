@@ -35,6 +35,7 @@ namespace SE15RedSocial
             
             try
             {
+
                 usuario.Correo = TxtUserName.Text;
                 usuario.Contrasena = TxtPassword.Text;
                 resultado = blUsuario.LoginUsuario(usuario);
@@ -42,7 +43,8 @@ namespace SE15RedSocial
                 {
                     LblMensaje.Text = "Autorización exitosa.";
                     LblMensaje.Visible = true;
-                    Response.Redirect("MPRedSocial.Master");
+                    Session["correo"] = usuario.Correo;
+                    Response.Redirect("Principal.aspx", false);
                 }
                 else
                 {

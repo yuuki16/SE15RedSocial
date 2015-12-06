@@ -4,6 +4,8 @@ C:\Users\Michelle\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\DA
 C:\Users\Michelle\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
 C:\Users\Michelle\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\DAO\obj\Debug\DAO.dll
 C:\Users\Michelle\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\DAO\obj\Debug\DAO.pdb
+C:\Users\Michelle\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\DAO\bin\Debug\Entidades.dll
+C:\Users\Michelle\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\DAO\bin\Debug\Entidades.pdb
 C:\Users\Carlosg\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\DAO\bin\Debug\DAO.dll.config
 C:\Users\Carlosg\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\DAO\bin\Debug\DAO.dll
 C:\Users\Carlosg\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\DAO\bin\Debug\DAO.pdb
@@ -12,5 +14,3 @@ C:\Users\Carlosg\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\DAO
 C:\Users\Carlosg\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
 C:\Users\Carlosg\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\DAO\obj\Debug\DAO.dll
 C:\Users\Carlosg\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\DAO\obj\Debug\DAO.pdb
-C:\Users\Michelle\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\DAO\bin\Debug\Entidades.dll
-C:\Users\Michelle\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\DAO\bin\Debug\Entidades.pdb

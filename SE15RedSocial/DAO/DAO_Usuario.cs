@@ -45,7 +45,7 @@ namespace DAO
             conn.cerrarConexion();
             return dt;
         }
-
+        
         public Boolean AgregarUsuario(Usuario usuario)
         {
            
@@ -130,6 +130,33 @@ namespace DAO
             }
             conn.cerrarConexion();
             return resultado;
+        }
+
+        public int ObtenerIDUsuarrio(Usuario usuario)
+        {
+
+            sql = "SP_ObtenerIDUsuario";
+            int number = 0;
+
+            try
+            {
+                if (conn.abrirConexion() == true)
+                {
+                    string mensaje = "";
+                    SqlCommand comando = new SqlCommand(sql, conn.conn);
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.AddWithValue("@p_us_correo", usuario.Correo);
+                    comando.Connection = conn.conn;
+                    mensaje = comando.ExecuteScalar().ToString();
+                    int.TryParse(mensaje, out number);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("No se pudo realizar la consulta.", ex);
+            }
+            conn.cerrarConexion();
+            return number;
         }
 
         public Boolean LoginUsuario(Usuario usuario)
