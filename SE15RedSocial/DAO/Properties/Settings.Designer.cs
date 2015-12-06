@@ -26,7 +26,8 @@ namespace DAO.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LABORATORIO;Initial Catalog=RedSocial;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=GONDU\\SQLEXPRESS;Initial Catalog=Calidad;User ID=sa;Password=b20g11d9" +
+            "1")]
         public string connectionString {
             get {
                 return ((string)(this["connectionString"]));

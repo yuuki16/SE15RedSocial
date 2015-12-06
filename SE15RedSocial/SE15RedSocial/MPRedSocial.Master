@@ -1,0 +1,48 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MPRedSocial.master.cs" Inherits="SE15RedSocial.MPRedSocial" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        <table id="tblmenu" style="text-align:center" align="right">
+            <tr>
+                <td>
+                    <asp:LinkButton ID="lnkPerfil" runat="server" SkinId="toolbar_lnk" OnClick="lnkPerfil_Click">Perfil</asp:LinkButton>
+                </td>
+                <td>
+                    <asp:LinkButton ID="lnkNotificaciones" runat="server" SkinId="toolbar_lnk">Notificaciones</asp:LinkButton>
+                </td>
+                <td>
+                    <asp:LinkButton ID="lnkSolicitudes" runat="server" SkinId="toolbar_lnk">Solicitudes</asp:LinkButton>
+                </td>
+                <td>
+                    <asp:LinkButton ID="lnkMensajes" runat="server" SkinId="toolbar_lnk">Mensajes</asp:LinkButton>
+                </td>
+            </tr>
+
+        </table>
+            
+        <asp:TextBox runat="server" align="left" Width="316px"></asp:TextBox>
+        <asp:Button runat="server" Text="Buscar" Width="92px"/>
+        </asp:ContentPlaceHolder>
+         <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+             <p>
+
+             </p>
+             <p>
+
+             </p>
+         </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

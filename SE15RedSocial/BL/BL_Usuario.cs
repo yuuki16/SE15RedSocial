@@ -89,7 +89,7 @@ namespace BL
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message, ex);
+                throw new Exception("Datos inválidos", ex);
             }
 
             return resultado;

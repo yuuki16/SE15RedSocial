@@ -17,19 +17,25 @@ namespace Entidades
         private char estado;
         #endregion
 
+        #region Constructores
+            public Comentario() { }
+
+            public Comentario(int p_publicacion, int p_usuario, string p_comentario, string p_estampa, char p_estado)
+            {
+                this.publicacion = p_publicacion;
+                this.usuario = p_usuario;
+                this.coment = p_comentario;
+                this.estampa = p_estampa;
+                this.estado = p_estado;
+            }
+        #endregion
+
         #region Propiedades
         public int Id
         {
             get
             {
                 return this.id;
-            }
-            set
-            {
-                if (value > 0)
-                {
-                    this.id = value;
-                }
             }
         }
 
@@ -105,21 +111,6 @@ namespace Entidades
             }
         }
         #endregion
-
-        #region Constructores
-        public Comentario() { }
-
-        public Comentario(int p_id, int p_publicacion, int p_usuario, string p_comentario, string p_estampa, char p_estado) {
-            this.id = p_id;
-            this.publicacion = p_publicacion;
-            this.usuario = p_usuario;
-            this.coment = p_comentario;
-            this.estampa = p_estampa;
-            this.estado = p_estado;
-        }
-        #endregion
-
-        #region Metodos
-        #endregion
+        
     }
 }

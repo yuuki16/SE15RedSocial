@@ -64,7 +64,7 @@ namespace DAO
                     comando.Parameters.Add("@p_us_contrasena", SqlDbType.VarChar).Value = usuario.Contrasena;
                     comando.Parameters.Add("@p_us_pais", SqlDbType.VarChar).Value = usuario.Pais;
                     comando.Parameters.Add("@p_us_estado", SqlDbType.Char).Value = usuario.Estado;
-                    comando.Parameters.Add("@p_us_estampa", SqlDbType.Timestamp).Value = usuario.Estampa;
+                    //comando.Parameters.Add("@p_us_estampa", SqlDbType.Timestamp).Value = usuario.Estampa;
                     comando.ExecuteNonQuery();
                     resultado = true;
                 }
