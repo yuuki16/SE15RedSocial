@@ -28,6 +28,7 @@ namespace SE15RedSocial
 
         protected void lnkPerfil_Click(object sender, EventArgs e)
         {
+            
             Response.Redirect("Perfil.aspx");
         }
 
@@ -50,7 +51,7 @@ namespace SE15RedSocial
             }
         }
 
-        private void ShowPopUpMsg(string msg)
+        public void ShowPopUpMsg(string msg)
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("alert('");

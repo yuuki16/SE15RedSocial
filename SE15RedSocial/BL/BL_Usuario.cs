@@ -13,6 +13,7 @@ namespace BL
     public class BL_Usuario
     {
         private DataSet ds = new DataSet();
+        private DataTable dt = new DataTable();
         private Boolean resultado = false;
         private DAO_Usuario dao_usuario = new DAO_Usuario();
 
@@ -31,6 +32,23 @@ namespace BL
             return ds;
 
         }
+
+        public DataTable ObtenerDatosUsuario(Usuario usuario)
+        {
+
+            try
+            {
+                dt = dao_usuario.ObtenerDatosUsuario(usuario);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+
+            return dt;
+
+        }
+
         public int ObtenerIDUsuarrio(Usuario usuario)
         {
 

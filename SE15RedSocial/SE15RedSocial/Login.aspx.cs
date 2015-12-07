@@ -43,7 +43,7 @@ namespace SE15RedSocial
                 {
                     LblMensaje.Text = "Autorización exitosa.";
                     LblMensaje.Visible = true;
-                    Session["correo"] = usuario.Correo;
+                    Session["usuario_logueado"] = usuario;
                     Response.Redirect("Principal.aspx", false);
                 }
                 else

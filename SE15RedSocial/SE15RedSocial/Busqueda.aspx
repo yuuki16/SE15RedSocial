@@ -2,13 +2,13 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" runat="Server">
     <asp:GridView ID="grdBusqueda" runat="server" AutoGenerateColumns="False" CellPadding="4"
-        ForeColor="#333333" GridLines="None" Width="722px">
+        ForeColor="#333333" GridLines="None" Width="722px" OnRowDeleting="grdBusqueda_RowDeleting" DataKeyNames="us_id">
         <AlternatingRowStyle BackColor="White" />
         <Columns>
             <asp:BoundField DataField="us_nombre" HeaderText="Nombre" />
             <asp:TemplateField HeaderText=" ">
                 <ItemTemplate>
-                    <asp:ImageButton ID="imbPerfil" runat="server" CommandName="Insert" ImageUrl="~/images/edit.png"
+                    <asp:ImageButton ID="imbPerfil" runat="server" CommandName="Delete" ImageUrl="~/images/edit.png"
                         ToolTip="Ver Perfil" />
                 </ItemTemplate>
             </asp:TemplateField>

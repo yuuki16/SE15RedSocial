@@ -16,6 +16,7 @@ namespace DAO
         private Boolean resultado = false;
         string sql;
         private DataSet ds = new DataSet();
+        private DataTable dt = new DataTable();
 
         public DataSet ObtenerUsuario(Usuario usuario)
         {
@@ -46,9 +47,34 @@ namespace DAO
             conn.cerrarConexion();
             return ds;
         }
+
+
+        public DataTable ObtenerDatosUsuario(Usuario usuario)
+        {
+            sql = "SP_ObtenerDatosUsuario";
+            try
+            {
+                if (conn.abrirConexion() == true)
+                {
+                    SqlCommand comando = new SqlCommand(sql, conn.conn);
+                    comando.Parameters.AddWithValue("@p_us_id", usuario.Id);
+                    comando.CommandType = CommandType.StoredProcedure;
+                    SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                    adaptador.Fill(dt);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+            conn.cerrarConexion();
+            return dt;
+        }
+
+
         public Boolean AgregarUsuario(Usuario usuario)
         {
-           
+            
             sql = "SP_AgregarUsuario";
 
             try

@@ -13,8 +13,8 @@ namespace Entidades
         private int id;
         private int emisor;
         private int receptor;
-        private char estado;
-        private string estampa;
+        private string estado;
+        private DateTime estampa;
         #endregion
 
         #region Propiedades
@@ -58,18 +58,21 @@ namespace Entidades
             } 
         }
 
-        public char Estado { get
+        public string Estado { get
             {
                 return this.estado;
             }
             set
             {
+                if (value != string.Empty)
+                {
                     this.estado = value;
+                }
                 
             }  
         }
 
-        public string Estampa
+        public DateTime Estampa
         {
             get
             {
@@ -77,7 +80,7 @@ namespace Entidades
             }
             set
             {
-                if (value != string.Empty)
+                if (value > DateTime.MinValue && value < DateTime.MaxValue)
                 {
                     this.estampa = value;
                 }
@@ -88,7 +91,7 @@ namespace Entidades
         #region Constructores
         public Solicitud() { }
 
-        public Solicitud(int p_id, int p_emisor, int p_receptor, char p_estado, string p_estampa) {
+        public Solicitud(int p_id, int p_emisor, int p_receptor, string p_estado, DateTime p_estampa) {
             this.id = p_id;
             this.emisor = p_emisor;
             this.receptor = p_receptor;

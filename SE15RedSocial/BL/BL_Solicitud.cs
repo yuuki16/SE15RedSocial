@@ -19,7 +19,55 @@ namespace BL
             
             try
             {
+                resultado = dao_solicitud.ObtenerSolicitud(solicitud);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+
+            return resultado;
+
+        }
+
+        public Boolean ObtenerSolicitudesPendientes(Solicitud solicitud)
+        {
+
+            try
+            {
                 resultado = dao_solicitud.ObtenerSolicitudesPendientes(solicitud);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+
+            return resultado;
+
+        }
+
+        public Boolean AgregarSolicitud(Solicitud solicitud)
+        {
+
+            try
+            {
+                resultado = dao_solicitud.AgregarSolicitud(solicitud);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+
+            return resultado;
+
+        }
+
+        public Boolean EliminarSolicitud(Solicitud solicitud)
+        {
+
+            try
+            {
+                resultado = dao_solicitud.EliminarSolicitud(solicitud);
             }
             catch (Exception ex)
             {

@@ -56,6 +56,7 @@ namespace DAO
                     SqlCommand comando = new SqlCommand(sql, conn.conn);
                     comando.CommandType = CommandType.StoredProcedure;
                     comando.Parameters.AddWithValue("@p_sl_receptor", solicitud.Receptor);
+                    comando.Parameters.AddWithValue("@p_sl_estado", solicitud.Estado);
                     comando.Connection = conn.conn;
                     SqlDataReader rd = comando.ExecuteReader();
                     if (rd.HasRows)
@@ -78,9 +79,34 @@ namespace DAO
             return resultado;
         }
 
-        public Boolean AgregarSolicitud()
+        public Boolean AgregarSolicitud(Solicitud solicitud)
         {
             sql = "SP_AgregarSolicitud";
+            try
+            {
+                if (conn.abrirConexion() == true)
+                {
+                    SqlCommand comando = new SqlCommand(sql, conn.conn);
+                    comando.Parameters.AddWithValue("@p_sl_emisor", solicitud.Emisor);
+                    comando.Parameters.AddWithValue("@p_sl_receptor", solicitud.Receptor);
+                    comando.Parameters.AddWithValue("@p_sl_estado", solicitud.Estado);
+                    comando.Parameters.AddWithValue("@p_sl_estampa", solicitud.Estampa);
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.ExecuteNonQuery();
+                    resultado = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+            conn.cerrarConexion();
+            return resultado;
+        }
+
+        public Boolean ModificarSolicitud(Solicitud solicitud)
+        {
+            sql = "SP_ModificarSolicitud";
             try
             {
                 if (conn.abrirConexion() == true)
@@ -99,15 +125,18 @@ namespace DAO
             return resultado;
         }
 
-        public Boolean ModificarSolicitud()
+        public Boolean EliminarSolicitud(Solicitud solicitud)
         {
-            sql = "SP_ModificarSolicitud";
+            sql = "SP_EliminarSolicitud";
             try
             {
                 if (conn.abrirConexion() == true)
                 {
                     SqlCommand comando = new SqlCommand(sql, conn.conn);
                     comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.Add("@p_us_id", SqlDbType.Int).Value = solicitud.Emisor;
+                    comando.Parameters.Add("@p_us_estado", SqlDbType.Char).Value = solicitud.Receptor;
+                    comando.Parameters.Add("@p_us_estado", SqlDbType.Char).Value = solicitud.Estampa;
                     comando.ExecuteNonQuery();
                     resultado = true;
                 }

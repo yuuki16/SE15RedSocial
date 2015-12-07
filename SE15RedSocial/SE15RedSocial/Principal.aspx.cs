@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Web;
@@ -19,27 +20,26 @@ namespace SE15RedSocial
         private Usuario usuario = new Usuario();
         private Boolean resultado = false;
         private string usuario_correo;
+        private DataTable dt = new DataTable();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            usuario_correo = (string) (Session["correo"]);
-            ((MPRedSocial)this.Master).LnkPerfil = usuario_correo;
-
-
+            usuario = (Usuario) (Session["usuario_logueado"]);
+            ((MPRedSocial)this.Master).LnkPerfil = usuario.Correo;
+            
             ObtenerSolicitudes();
+            ObtenerDatos();
         }
 
         private Boolean ObtenerSolicitudes()
         {
 
-            int idUsuario;
-
             try
             {
-                usuario.Correo = usuario_correo;
-                idUsuario = blUsuario.ObtenerIDUsuarrio(usuario);
-                solicitud.Receptor = idUsuario;
-                resultado = blSolicitud.ObtenerIDUsuarrio(solicitud);
+                usuario.Id = blUsuario.ObtenerIDUsuarrio(usuario);
+                solicitud.Receptor = usuario.Id;
+                solicitud.Estado = "Pendiente";
+                resultado = blSolicitud.ObtenerSolicitudesPendientes(solicitud);
 
                 if (resultado == true)
                 {
@@ -53,6 +53,35 @@ namespace SE15RedSocial
                 throw;
             }
             return resultado;
+        }
+
+        private void ObtenerDatos()
+        {
+            dt = blUsuario.ObtenerDatosUsuario(usuario);
+            
+            foreach (DataRow dtRow in dt.Rows)
+            {
+
+                char myChar = ' ';
+                string myString = new string(myChar, 0);
+                
+                usuario.Id = (int) dtRow["us_id"];
+                usuario.Correo = dtRow["us_correo"].ToString();
+                usuario.Nombre = dtRow["us_nombre"].ToString();
+                usuario.ApellidoPaterno = dtRow["us_apellidoPaterno"].ToString();
+                usuario.ApellidoMaterno = dtRow["us_apellidoMaterno"].ToString();
+                usuario.Alias = dtRow["us_alias"].ToString();
+                usuario.Contrasena = dtRow["us_contrasena"].ToString();
+                myString = dtRow["us_estado"].ToString();
+                usuario.Estampa = dtRow["us_estampa"].ToString();
+
+                myChar = myString[0];
+                usuario.Estado = myChar;
+
+            }
+            
+            Session["usuario_logueado"] = usuario;
+            
         }
 
         private Boolean ObtenerMensajes()
