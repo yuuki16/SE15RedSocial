@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link rel="stylesheet" href="content/css/bootstrap.css" type="text/css">
     <style type="text/css">
         .auto-style1 {
             width: 611px;
@@ -14,12 +15,16 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    
-        Red Social
-        <asp:Button ID="btnIniciar" runat="server" Text="Iniciar Sesión" align="right" OnClick="btnIniciar_Click"/>
+        <div class="page-header">
+            <h1>Red Social&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Button ID="btnIniciar" class="btn btn-group" runat="server" Text="Iniciar Sesión" OnClick="btnIniciar_Click"/>
+            </h1>
+            
+        </div>
         <br />
         <br />
-        Regístrese<br />
+        <asp:Label ID="lblRegistrese" runat="server" Text="Registrese" class="label label-primary"></asp:Label>
+        <br />
         <br />
         <%--<asp:Label ID="lblTextoBienvenida" runat="server" Text="Únete a Nuestra Red Social :)"></asp:Label><br />
         --%>
@@ -29,7 +34,7 @@
                     Correo:
                 </td>
                 <td class="auto-style1">
-                    <asp:TextBox ID="txtCorreo" runat="server" Width="260px"></asp:TextBox>
+                    <asp:TextBox ID="txtCorreo" class="form-control" runat="server" Width="260px"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -37,7 +42,7 @@
                     Nombre:
                 </td>
                 <td class="auto-style1">
-                    <asp:TextBox ID="txtNombre" runat="server" Width="258px"></asp:TextBox>
+                    <asp:TextBox ID="txtNombre" class="form-control" runat="server" Width="258px"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -45,8 +50,8 @@
                     Apellidos:
                 </td>
                 <td class="auto-style1">
-                    <asp:TextBox ID="txtApellido" runat="server" Width="258px"></asp:TextBox>
-                    <asp:TextBox ID="txtSegundoApellido" runat="server" Width="256px"></asp:TextBox>
+                    <asp:TextBox ID="txtApellido" class="form-control" runat="server" Width="258px"></asp:TextBox>
+                    <asp:TextBox ID="txtSegundoApellido" runat="server" class="form-control" Width="256px"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -54,7 +59,7 @@
                     Alias:
                 </td>
                 <td class="auto-style1">
-                    <asp:TextBox ID="txtAlias" runat="server" Width="258px"></asp:TextBox>
+                    <asp:TextBox ID="txtAlias" class="form-control" runat="server" Width="258px"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -62,7 +67,7 @@
                     Contraseña:
                 </td>
                 <td class="auto-style1">
-                    <asp:TextBox ID="txtContrasena" runat="server" Width="258px"></asp:TextBox>
+                    <asp:TextBox ID="txtContrasena" class="form-control" runat="server" Width="258px"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -70,12 +75,12 @@
                     Pais:
                 </td>
                 <td class="auto-style1">
-                    <asp:TextBox ID="txtPais" runat="server" Width="256px"></asp:TextBox>
+                    <asp:TextBox ID="txtPais" class="form-control" runat="server" Width="256px"></asp:TextBox>
                 </td>
             </tr>
         </table>
         <br />
-        <asp:Button ID="btnAgregar" runat="server" Text="Abrir una cuenta" OnClick="btnAgregar_Click" />
+        <asp:Button ID="btnAgregar" runat="server" class="btn btn-default" Text="Abrir una cuenta" OnClick="btnAgregar_Click" />
     
     </div>
     </form>

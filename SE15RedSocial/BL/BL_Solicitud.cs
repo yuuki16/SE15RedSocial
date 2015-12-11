@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DAO;
 using Entidades;
+using System.Data;
 
 namespace BL
 {
@@ -13,7 +14,7 @@ namespace BL
 
         private Boolean resultado = false;
         private DAO_Solicitud dao_solicitud = new DAO_Solicitud();
-
+        private DataTable dt = new DataTable();
         public Boolean ObtenerIDUsuarrio(Solicitud solicitud)
         {
             
@@ -30,19 +31,19 @@ namespace BL
 
         }
 
-        public Boolean ObtenerSolicitudesPendientes(Solicitud solicitud)
+        public DataTable ObtenerSolicitudesPendientes(Solicitud solicitud)
         {
 
             try
             {
-                resultado = dao_solicitud.ObtenerSolicitudesPendientes(solicitud);
+                dt = dao_solicitud.ObtenerSolicitudesPendientes(solicitud);
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message, ex);
             }
 
-            return resultado;
+            return dt;
 
         }
 

@@ -39,20 +39,54 @@ namespace SE15RedSocial
 
 	    private void ObtenerRelacion()
 	    {
-
-	        relacion.Usuario1 = usuario1.Id;
-	        relacion.Usuario2 = usuario2.Id;
-	        dt = blRelacion.ObtenerUsuario(relacion);
-
-	        if (dt.Rows.Count == 0)
-	        {
-	            btnAgregarEliminar.Text = "Agregar";
-	        }
-	        else
-	        {
-                btnAgregarEliminar.Text = "Eliminar";
+            if (usuario1.Id == usuario2.Id)
+            {
+                btnAgregarEliminar.Visible = false;
+                btnMensaje.Visible = false;
             }
-	    }
+            else {
+                btnAgregarEliminar.Visible = true;
+                btnMensaje.Visible = true;
+                relacion.Usuario1 = usuario1.Id;
+                relacion.Usuario2 = usuario2.Id;
+                dt = blRelacion.ObtenerUsuario(relacion);
+
+                if (dt.Rows.Count == 0)
+                {
+                    btnAgregarEliminar.Text = "Agregar";
+                }
+                else
+                {
+
+                    btnAgregarEliminar.Text = "Eliminar";
+                }
+            }
+        }
+
+        private void ConsultarSolicitudPendiente()
+        {
+            solicitud.Emisor = usuario1.Id;
+            solicitud.Receptor = usuario2.Id;
+            dt = blSolicitud.ObtenerSolicitudesPendientes(solicitud);
+            if (dt.Rows.Count > 0)
+            {
+                btnAgregarEliminar.Text = "Solicitud Pendiente";
+                btnAgregarEliminar.Enabled = false;
+            }
+            else {
+                solicitud.Emisor = usuario2.Id;
+                solicitud.Receptor = usuario1.Id;
+                dt = blSolicitud.ObtenerSolicitudesPendientes(solicitud);
+                if (dt.Rows.Count > 0)
+                {
+                    btnAgregarEliminar.Text = "Solicitud Pendiente";
+                    btnAgregarEliminar.Enabled = false;
+                }
+                else {
+
+                }
+            }
+        }
 
         protected void btnAgregarEliminar_Click(object sender, EventArgs e)
         {

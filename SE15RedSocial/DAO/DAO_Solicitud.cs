@@ -44,10 +44,11 @@ namespace DAO
             return resultado;
         }
 
-        public Boolean ObtenerSolicitudesPendientes(Solicitud solicitud)
+        public DataTable ObtenerSolicitudesPendientes(Solicitud solicitud)
         {
 
             sql = "SP_ObtenerSolicitudesPendientes";
+            DataTable dt = new DataTable();
 
             try
             {
@@ -58,17 +59,9 @@ namespace DAO
                     comando.Parameters.AddWithValue("@p_sl_receptor", solicitud.Receptor);
                     comando.Parameters.AddWithValue("@p_sl_estado", solicitud.Estado);
                     comando.Connection = conn.conn;
-                    SqlDataReader rd = comando.ExecuteReader();
-                    if (rd.HasRows)
-                    {
-                        rd.Read();
-                        resultado = true;
-                    }
-                    else
-                    {
-                        resultado = false;
-                    }
-                    
+                    SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                    adaptador.Fill(dt);
+                    conn.cerrarConexion();
                 }
             }
             catch (Exception ex)
@@ -76,7 +69,7 @@ namespace DAO
                 throw new Exception("No se pudo realizar la consulta.", ex);
             }
             conn.cerrarConexion();
-            return resultado;
+            return dt;
         }
 
         public Boolean AgregarSolicitud(Solicitud solicitud)

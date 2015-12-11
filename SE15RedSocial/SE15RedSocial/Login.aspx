@@ -6,6 +6,8 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <link rel="stylesheet" href="content/css/bootstrap.css" type="text/css">
+    
 </head>
 <body>
     <form id="form1" runat="server">
@@ -15,26 +17,26 @@
                 <td>
                     <table style="width: 350px">
                         <tr>
-                            <td>Correo:
+                            <td><asp:Label ID="lblCorreo" runat="server" Text="Correo" class="label label-default"></asp:Label>
                             </td>
                             <td><asp:TextBox runat="server" ID="TxtUserName"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
-                            <td>Contraseña:
+                            <td><asp:Label ID="lblContrasena" runat="server" Text="Contraseña" class="label label-default"></asp:Label>
                             </td>
                             <td><asp:TextBox runat="server" ID="TxtPassword" TextMode="Password"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
                             <td colspan="2">
-                                <asp:Button runat="server" ID="BtnIngresar" Text="Ingresar" OnClick="BtnIngresar_Click"></asp:Button>
+                                <asp:Button runat="server" class="btn btn-default" ID="BtnIngresar" Text="Ingresar" OnClick="BtnIngresar_Click"></asp:Button>
                             </td>
                         </tr>
                     </table>
                 </td>
                 <td>
-                    <img src="Imgs/login.jpeg" style="height: 114px; width: 174px" />
+                    <img src="imgs/login.ico" style="height: 114px; width: 174px" />
                 </td>
             </tr>
             <tr>
@@ -46,5 +48,7 @@
         </table>
     </div>
     </form>
+     <script src="Scripts/jquery-2.1.4.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
 </body>
 </html>

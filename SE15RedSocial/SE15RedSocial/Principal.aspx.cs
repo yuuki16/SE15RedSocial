@@ -36,12 +36,12 @@ namespace SE15RedSocial
 
             try
             {
-                usuario.Id = blUsuario.ObtenerIDUsuarrio(usuario);
+                
                 solicitud.Receptor = usuario.Id;
                 solicitud.Estado = "Pendiente";
-                resultado = blSolicitud.ObtenerSolicitudesPendientes(solicitud);
+                dt = blSolicitud.ObtenerSolicitudesPendientes(solicitud);
 
-                if (resultado == true)
+                if (dt.Rows.Count > 0)
                 {
                     ((MPRedSocial)Master).LnkSolicitud = Color.Crimson;
                 }
@@ -57,7 +57,10 @@ namespace SE15RedSocial
 
         private void ObtenerDatos()
         {
-            dt = blUsuario.ObtenerDatosUsuario(usuario);
+
+
+           usuario.Id = blUsuario.ObtenerIDUsuarrio(usuario);
+           dt = blUsuario.ObtenerDatosUsuario(usuario);
             
             foreach (DataRow dtRow in dt.Rows)
             {

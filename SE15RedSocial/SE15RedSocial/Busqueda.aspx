@@ -6,10 +6,12 @@
         <AlternatingRowStyle BackColor="White" />
         <Columns>
             <asp:BoundField DataField="us_nombre" HeaderText="Nombre" />
+            <asp:BoundField DataField="us_apellidoPaterno" HeaderText="" />
+            <asp:BoundField DataField="us_apellidoMaterno" HeaderText="" />
             <asp:TemplateField HeaderText=" ">
                 <ItemTemplate>
-                    <asp:ImageButton ID="imbPerfil" runat="server" CommandName="Delete" ImageUrl="~/images/edit.png"
-                        ToolTip="Ver Perfil" />
+                    <asp:ImageButton ID="imbPerfil" runat="server" CommandName="Delete" ImageUrl="~/imgs/profile.ico"
+                        ToolTip="Ver Perfil" Height="50" Width="50" />
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>
@@ -24,10 +26,4 @@
         <SortedDescendingCellStyle BackColor="#E9EBEF" />
         <SortedDescendingHeaderStyle BackColor="#4870BE" />
     </asp:GridView>
-<%--<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:RedSocialConnectionString %>" SelectCommand="SP_ObtenerUsuario" SelectCommandType="StoredProcedure">
-    <SelectParameters>
-        <asp:SessionParameter DefaultValue="null" Name="p_us_correo" SessionField="correoparabuscar" Type="String" />
-        <asp:SessionParameter DefaultValue="null" Name="p_us_nombre" SessionField="nombreparabuscar" Type="String" />
-    </SelectParameters>
-</asp:SqlDataSource>--%>
 </asp:Content>

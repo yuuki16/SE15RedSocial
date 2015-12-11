@@ -59,10 +59,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Busqueda.aspx" />
+    <Content Include="imgs\delete.ico" />
+    <Content Include="imgs\check.ico" />
+    <Content Include="imgs\profile.ico" />
     <Content Include="Login.aspx" />
     <Content Include="Perfil.aspx" />
     <Content Include="Principal.aspx" />
     <Content Include="Registrarse.aspx" />
+    <Content Include="Solicitudes.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -111,6 +115,13 @@
     <Compile Include="Registrarse.aspx.designer.cs">
       <DependentUpon>Registrarse.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Solicitudes.aspx.cs">
+      <DependentUpon>Solicitudes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Solicitudes.aspx.designer.cs">
+      <DependentUpon>Solicitudes.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="MPRedSocial.Master" />
@@ -132,7 +143,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Content\" />
     <Folder Include="css\" />
+    <Folder Include="Scripts\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

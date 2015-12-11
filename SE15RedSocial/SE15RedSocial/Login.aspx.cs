@@ -32,31 +32,37 @@ namespace SE15RedSocial
 
         protected void BtnIngresar_Click(object sender, EventArgs e)
         {
-            
-            try
+            if (TxtPassword.Text == "" || TxtUserName.Text == "")
             {
+                LblMensaje.Text = "Ingrese un correo y contraseña.";
+                LblMensaje.Visible = true;
+            }
+            else {
 
-                usuario.Correo = TxtUserName.Text;
-                usuario.Contrasena = TxtPassword.Text;
-                resultado = blUsuario.LoginUsuario(usuario);
-                if (resultado == true)
+                try
                 {
-                    LblMensaje.Text = "Autorización exitosa.";
-                    LblMensaje.Visible = true;
-                    Session["usuario_logueado"] = usuario;
-                    Response.Redirect("Principal.aspx", false);
+
+                    usuario.Correo = TxtUserName.Text;
+                    usuario.Contrasena = TxtPassword.Text;
+                    resultado = blUsuario.LoginUsuario(usuario);
+                    if (resultado == true)
+                    {
+                        LblMensaje.Text = "Autorización exitosa.";
+                        LblMensaje.Visible = true;
+                        Session["usuario_logueado"] = usuario;
+                        Response.Redirect("Principal.aspx", false);
+                    }
+                    else
+                    {
+                        LblMensaje.Text = "Usuario o Contraseña incorrectos.";
+                        LblMensaje.Visible = true;
+                    }
                 }
-                else
+                catch (Exception exLogin)
                 {
-                    LblMensaje.Text = "Usuario o Contraseña incorrectos.";
-                    LblMensaje.Visible = true;
+                    throw new Exception(exLogin.Message);
                 }
             }
-            catch (Exception exLogin)
-            {
-                throw new Exception(exLogin.Message);
-            }
-
             //--------------------------------------------
             //Agregar
 

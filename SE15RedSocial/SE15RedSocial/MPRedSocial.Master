@@ -6,13 +6,14 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="content/css/bootstrap.css" type="text/css">
+<%--    <link rel="stylesheet" type="text/css" href="css/style.css">--%>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
+    <div class="navbar navbar-inverse navbar-fixed-top">
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         <table id="tblmenu" style="text-align:center" align="right">
             <tr>
@@ -20,7 +21,7 @@
                     <asp:LinkButton ID="lnkPerfil" runat="server" SkinId="toolbar_lnk" OnClick="lnkPerfil_Click">Perfil</asp:LinkButton>
                 </td>
                 <td>
-                    <asp:LinkButton ID="lnkSolicitudes" runat="server" SkinId="toolbar_lnk">Solicitudes</asp:LinkButton>
+                    <asp:LinkButton ID="lnkSolicitudes" runat="server" SkinId="toolbar_lnk" OnClick="lnkSolicitudes_Click" >Solicitudes</asp:LinkButton>
                 </td>
                 <td>
                     <asp:LinkButton ID="lnkMensajes" runat="server" SkinId="toolbar_lnk">Mensajes</asp:LinkButton>
@@ -32,15 +33,20 @@
         <asp:TextBox id="txtBuscar" runat="server" align="left" Width="316px"></asp:TextBox>
         <asp:Button runat="server" ID="btBuscar" Text="Buscar" Width="92px" OnClick="btBuscar_Click"/>
         </asp:ContentPlaceHolder>
+        </div>
+        <br />
+        <br />
+        <br />
+        
+         <br />
          <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
              <p>
 
              </p>
-             <p>
-
-             </p>
          </asp:ContentPlaceHolder>
-    </div>
+             
     </form>
+    <script src="Scripts/jquery-2.1.4.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
 </body>
 </html>

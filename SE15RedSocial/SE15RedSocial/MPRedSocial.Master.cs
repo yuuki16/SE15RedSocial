@@ -28,7 +28,7 @@ namespace SE15RedSocial
 
         protected void lnkPerfil_Click(object sender, EventArgs e)
         {
-            
+            Session["usuario_perfil"] = Session["usuario_logueado"];
             Response.Redirect("Perfil.aspx");
         }
 
@@ -58,6 +58,11 @@ namespace SE15RedSocial
             sb.Append(msg.Replace("\n", "\\n").Replace("\r", "").Replace("'", "\\'"));
             sb.Append("');");
             ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "showalert", sb.ToString(), true);
+        }
+
+        protected void lnkSolicitudes_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Solicitudes.aspx");
         }
     }
 }
