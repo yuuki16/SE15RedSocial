@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Entidades
 {
     public class Usuario
     {
         #region Atributos
-
+        
         private int id;
         private string correo;
         private string nombre;
@@ -19,7 +20,7 @@ namespace Entidades
         private string pais;
         private char estado;
         private string estampa; /*when retrieving from database
-
+        
                                 string dt = Convert.ToBase64String(dataReader["dt"] as byte[]);
                                 when passing into database
 
@@ -50,6 +51,10 @@ namespace Entidades
                 {
                     this.correo = value;
                 }
+                else
+                {
+                    throw new Exception("Correo vacío.");
+                }
             }
         }
 
@@ -63,6 +68,10 @@ namespace Entidades
                 if (value != string.Empty)
                 {
                     this.nombre = value;
+                }
+                else
+                {
+                    throw new Exception("Nombre vacío.");
                 }
             }
         }
@@ -78,6 +87,10 @@ namespace Entidades
                 {
                     this.apellidoPaterno = value;
                 }
+                else
+                {
+                    throw new Exception("Apellido 1 vacío.");
+                }
             }
         }
 
@@ -91,6 +104,11 @@ namespace Entidades
                 if (value != string.Empty)
                 {
                     this.apellidoMaterno = value;
+                }
+                else
+                {
+                    throw new Exception("Apellido 2 vacío.");
+
                 }
             }
         }
@@ -107,6 +125,10 @@ namespace Entidades
                 {
                     this.alias = value;
                 }
+                else
+                {
+                    throw new Exception("Alias vacío.");
+                }
             }
         }
 
@@ -120,6 +142,10 @@ namespace Entidades
                 if (value != string.Empty)
                 {
                     this.contrasena = value;
+                }
+                else
+                {
+                    throw new Exception("Contraseña vacío.");
                 }
             }
         }
@@ -135,6 +161,9 @@ namespace Entidades
                 if (value != string.Empty)
                 {
                     this.pais = value;
+                }else
+                {
+                    throw new Exception("Pais vacío.");
                 }
             }
         }
@@ -147,7 +176,14 @@ namespace Entidades
             }
             set
             {
-                this.estado = value;
+                if (value != char.MaxValue && value != char.MinValue)
+                {
+                    this.estado = value;
+                }
+                else
+                {
+                    throw new Exception("Fecha vacía.");
+                }
             }
         }
 
@@ -162,6 +198,10 @@ namespace Entidades
                 if (value != string.Empty)
                 {
                     this.estampa = value;
+                }
+                else
+                {
+                    throw new Exception("Fecha vacía.");
                 }
             }
         }

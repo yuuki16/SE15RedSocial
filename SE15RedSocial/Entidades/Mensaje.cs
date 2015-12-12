@@ -13,7 +13,7 @@ namespace Entidades
         private int id;
         private int emisor;
         private int receptor;
-        private string estampa;
+        private DateTime estampa;
         private string msj;
         private string multimedia;
 
@@ -28,10 +28,8 @@ namespace Entidades
             }
             set
             {
-                if (value > 0)
-                {
-                    this.id = value;
-                }
+                this.id = value;
+
             }
         }
 
@@ -43,10 +41,7 @@ namespace Entidades
             }
             set
             {
-                if (value > 0)
-                {
-                    this.emisor = value;
-                }
+                this.emisor = value;
             }
         }
 
@@ -58,14 +53,12 @@ namespace Entidades
             }
             set
             {
-                if (value > 0)
-                {
-                    this.receptor = value;
-                }
+                this.receptor = value;
+
             }
         }
 
-        public string Estampa
+        public DateTime Estampa
         {
             get
             {
@@ -73,10 +66,8 @@ namespace Entidades
             }
             set
             {
-                if (value != string.Empty )
-                {
-                    this.estampa = value;
-                }
+                this.estampa = value;
+
             }
         }
 
@@ -88,10 +79,7 @@ namespace Entidades
             }
             set
             {
-                if (value != string.Empty)
-                {
-                    this.msj = value;
-                }
+                this.msj = value;
             }
         }
 
@@ -103,10 +91,8 @@ namespace Entidades
             }
             set
             {
-                if (value != string.Empty)
-                {
-                    this.multimedia = value;
-                }
+                this.multimedia = value;
+
             }
         }
 
@@ -117,7 +103,7 @@ namespace Entidades
         public Mensaje() { }
 
         public Mensaje(int p_id, int p_emisor, int p_receptor, string p_estampa, string p_mensaje, string p_multimedia) { }
-        
+
         #endregion
 
         #region Metodos

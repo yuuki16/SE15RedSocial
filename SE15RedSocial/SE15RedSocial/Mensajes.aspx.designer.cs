@@ -10,42 +10,33 @@
 namespace SE15RedSocial {
     
     
-    public partial class Perfil {
+    public partial class Mensajes {
         
         /// <summary>
-        /// lblNombre control.
+        /// PlaceHolder1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNombre;
+        protected global::System.Web.UI.WebControls.PlaceHolder PlaceHolder1;
         
         /// <summary>
-        /// imgPerfil control.
+        /// txtMensaje control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgPerfil;
+        protected global::System.Web.UI.WebControls.TextBox txtMensaje;
         
         /// <summary>
-        /// btnAgregarEliminar control.
+        /// btnEnviar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAgregarEliminar;
-        
-        /// <summary>
-        /// btnMensaje control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnMensaje;
+        protected global::System.Web.UI.WebControls.Button btnEnviar;
     }
 }

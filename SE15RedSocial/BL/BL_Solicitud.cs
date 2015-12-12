@@ -63,6 +63,22 @@ namespace BL
 
         }
 
+        public Boolean ModificarSolicitud(Solicitud solicitud)
+        {
+
+            try
+            {
+                resultado = dao_solicitud.ModificarSolicitud(solicitud);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+
+            return resultado;
+
+        }
+
         public Boolean EliminarSolicitud(Solicitud solicitud)
         {
 

@@ -26,6 +26,7 @@ namespace SE15RedSocial
             
             //Session["usuario_logueado"] = null;
             usuario = (Usuario)(Session["usuario_logueado"]);
+            ((MPRedSocial)this.Master).LnkPerfil = usuario.Correo;
 
             CargarDatos();
             
@@ -47,16 +48,16 @@ namespace SE15RedSocial
                     }
                     dtUs = bl_usuario.ObtenerDatosUsuario(usuario);
                     dt.Merge(dtUs, true);
+                    dt.AcceptChanges();
                     grdSolicitudes.DataSource = dt;
                     grdSolicitudes.DataBind();
+
+                    //grdSolicitudes.
+
                     Session["Datos"] = dt;
                     
                     
                     
-                }
-                else
-                {
-                    throw new Exception("El ds esta vacio");
                 }
             }
             catch (Exception ex)
@@ -68,12 +69,32 @@ namespace SE15RedSocial
         
         protected void grdBusqueda_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
+
             //rechazar
+            solicitud.Estado = "Rechazado";
+            if (bl_solicitud.EliminarSolicitud(solicitud))
+            {
+                //La solicitud se rechazo
+            }
+            else
+            {
+                //Error
+            }
+            
         }
 
         protected void grdSolicitudes_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
             //aceptar
+            solicitud.Estado = "Aceptado";
+            if (bl_solicitud.ModificarSolicitud(solicitud))
+            {
+                //La solicitud se rechazo
+            }
+            else
+            {
+                //Error
+            }
         }
     }
 }

@@ -1,13 +1,5 @@
-C:\Users\Michelle\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
-C:\Users\Michelle\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\Entidades\obj\Debug\Entidades.Properties.Resources.resources
-C:\Users\Michelle\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\Entidades\obj\Debug\Entidades.csproj.GenerateResource.Cache
 C:\Users\user-pc\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\Entidades\obj\Debug\Entidades.Properties.Resources.resources
 C:\Users\user-pc\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\Entidades\obj\Debug\Entidades.csproj.GenerateResource.Cache
-C:\Users\Michelle\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\Entidades\bin\Debug\Entidades.dll.config
-C:\Users\Michelle\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\Entidades\bin\Debug\Entidades.dll
-C:\Users\Michelle\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\Entidades\bin\Debug\Entidades.pdb
-C:\Users\Michelle\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\Entidades\obj\Debug\Entidades.dll
-C:\Users\Michelle\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\Entidades\obj\Debug\Entidades.pdb
 C:\Users\Carlosg\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\Entidades\bin\Debug\Entidades.dll.config
 C:\Users\Carlosg\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\Entidades\bin\Debug\Entidades.dll
 C:\Users\Carlosg\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\Entidades\bin\Debug\Entidades.pdb
@@ -15,4 +7,11 @@ C:\Users\Carlosg\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\Ent
 C:\Users\Carlosg\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\Entidades\obj\Debug\Entidades.csproj.GenerateResource.Cache
 C:\Users\Carlosg\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\Entidades\obj\Debug\Entidades.dll
 C:\Users\Carlosg\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\Entidades\obj\Debug\Entidades.pdb
-C:\Users\Carlosg\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
+C:\Users\Michelle\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\Entidades\bin\Debug\Entidades.dll.config
+C:\Users\Michelle\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\Entidades\bin\Debug\Entidades.dll
+C:\Users\Michelle\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Michelle\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
+C:\Users\Michelle\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\Entidades\obj\Debug\Entidades.Properties.Resources.resources
+C:\Users\Michelle\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\Entidades\obj\Debug\Entidades.csproj.GenerateResource.Cache
+C:\Users\Michelle\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\Entidades\obj\Debug\Entidades.dll
+C:\Users\Michelle\Dropbox\Calidad de Software\Proyecto\Proyecto\SE15RedSocial\Entidades\obj\Debug\Entidades.pdb

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -34,14 +35,28 @@ namespace SE15RedSocial
         usuario.Contrasena = txtContrasena.Text;
         usuario.Pais = txtPais.Text;
         usuario.Estado = 'Y';
+        usuario.Estampa = DateTime.Now.ToString();
+
         if (bl_usuario.AgregarUsuario(usuario))
         {
-
+           ShowPopUpMsg("Usuario agregado con éxito.");
+           Response.Redirect("Login.aspx");
         }
-        else {
-
+        else
+        {
+            ShowPopUpMsg("Error al ingresar usuario.");
         }
 
     }
-   }
+
+        public void ShowPopUpMsg(string msg)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("alert('");
+            sb.Append(msg.Replace("\n", "\\n").Replace("\r", "").Replace("'", "\\'"));
+            sb.Append("');");
+            ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "showalert", sb.ToString(), true);
+        }
+
+    }
 }

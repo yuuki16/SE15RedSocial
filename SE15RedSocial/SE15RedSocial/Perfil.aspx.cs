@@ -30,6 +30,9 @@ namespace SE15RedSocial
 		{
 
             usuario1 = (Usuario)(Session["usuario_logueado"]);
+            
+            ((MPRedSocial)this.Master).LnkPerfil = usuario1.Correo;
+
             usuario2 = (Usuario)(Session["usuario_perfil"]);
             lblNombre.Text = usuario2.Nombre + ' ' + usuario2.ApellidoPaterno + ' ' + usuario2.ApellidoMaterno;
             
@@ -139,6 +142,11 @@ namespace SE15RedSocial
                 throw new Exception("Error al agregar", ex);
             }
             
+        }
+
+        protected void btnMensaje_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Mensajes.aspx");
         }
     }
 }

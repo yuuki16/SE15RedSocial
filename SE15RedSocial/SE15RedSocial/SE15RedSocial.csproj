@@ -62,7 +62,9 @@
     <Content Include="imgs\delete.ico" />
     <Content Include="imgs\check.ico" />
     <Content Include="imgs\profile.ico" />
+    <Content Include="imgs\RedSocial.png" />
     <Content Include="Login.aspx" />
+    <Content Include="Mensajes.aspx" />
     <Content Include="Perfil.aspx" />
     <Content Include="Principal.aspx" />
     <Content Include="Registrarse.aspx" />
@@ -85,6 +87,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mensajes.aspx.cs">
+      <DependentUpon>Mensajes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mensajes.aspx.designer.cs">
+      <DependentUpon>Mensajes.aspx</DependentUpon>
     </Compile>
     <Compile Include="MPRedSocial.Master.cs">
       <DependentUpon>MPRedSocial.Master</DependentUpon>

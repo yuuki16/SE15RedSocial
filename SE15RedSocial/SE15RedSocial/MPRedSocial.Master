@@ -24,12 +24,11 @@
                     <asp:LinkButton ID="lnkSolicitudes" runat="server" SkinId="toolbar_lnk" OnClick="lnkSolicitudes_Click" >Solicitudes</asp:LinkButton>
                 </td>
                 <td>
-                    <asp:LinkButton ID="lnkMensajes" runat="server" SkinId="toolbar_lnk">Mensajes</asp:LinkButton>
-                </td>
+                    &nbsp;</td>
             </tr>
 
         </table>    
-            <asp:ImageButton ID="ImageButton1" runat="server" />
+            <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/imgs/RedSocial.png" Height="46px" Width="55px" OnClick="ImageButton1_Click"/>
         <asp:TextBox id="txtBuscar" runat="server" align="left" Width="316px"></asp:TextBox>
         <asp:Button runat="server" ID="btBuscar" Text="Buscar" Width="92px" OnClick="btBuscar_Click"/>
         </asp:ContentPlaceHolder>

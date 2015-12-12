@@ -64,5 +64,14 @@ namespace SE15RedSocial
         {
             Response.Redirect("Solicitudes.aspx");
         }
+
+        protected void lnkMensajes_Click(object sender, EventArgs e)
+        {
+        }
+
+        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("Principal.aspx");
+        }
     }
 }

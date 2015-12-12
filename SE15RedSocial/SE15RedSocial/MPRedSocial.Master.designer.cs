@@ -58,15 +58,6 @@ namespace SE15RedSocial {
         protected global::System.Web.UI.WebControls.LinkButton lnkSolicitudes;
         
         /// <summary>
-        /// lnkMensajes control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkMensajes;
-        
-        /// <summary>
         /// ImageButton1 control.
         /// </summary>
         /// <remarks>
