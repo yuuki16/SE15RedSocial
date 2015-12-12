@@ -18,12 +18,10 @@ namespace SE15RedSocial
         private Entidades.Mensaje mensaje = new Entidades.Mensaje();
         private BL_Mensaje bl_mensaje = new BL_Mensaje();
         Label myLabel;
-
+        Image myImage;
         protected void Page_Load(object sender, EventArgs e)
         {
             usuarioEmisor = (Usuario)Session["usuario_logueado"];
-            ((MPRedSocial)this.Master).LnkPerfil = usuarioEmisor.Correo;
-
             usuarioReceptor = (Usuario)Session["usuario_perfil"];
             ObtenerMensajes();
         }
@@ -37,20 +35,29 @@ namespace SE15RedSocial
             {
                 foreach (DataRow dtRow in dt.Rows)
                 {
-                    myLabel = new Label();
                     mensaje.Msj = dtRow["ms_mensaje"].ToString();
                     mensaje.Emisor = (int)dtRow["ms_emisor"];
-                    myLabel.Text = mensaje.Msj;
-                    if (mensaje.Emisor == usuarioEmisor.Id)
+                    mensaje.Multimedia = dtRow["ms_multimedia"].ToString();
+                    if (mensaje.Multimedia == "")
                     {
-                        myLabel.BackColor = System.Drawing.Color.White;
+                        myLabel = new Label();
+                        if (mensaje.Emisor == usuarioEmisor.Id)
+                        {
+                            myLabel.BackColor = System.Drawing.Color.White;
+                        }
+                        else {
+                            myLabel.BackColor = System.Drawing.Color.PeachPuff;
+                        }
+                        myLabel.Text = mensaje.Msj;
+                        PlaceHolder1.Controls.Add(myLabel);
                     }
                     else {
-                        myLabel.BackColor = System.Drawing.Color.PeachPuff;
+                        myImage = new Image();
+                        myImage.ImageUrl = "~/Multimedia/" + mensaje.Multimedia;
+                        myImage.Width = 100;
+                        myImage.Height = 100;
+                        PlaceHolder1.Controls.Add(myImage);
                     }
-
-                    PlaceHolder1.Controls.Add(myLabel);
-                    // Add a spacer in the form of an HTML <br /> element.
                     PlaceHolder1.Controls.Add(new LiteralControl("<br />"));
                 }
             }
@@ -62,7 +69,15 @@ namespace SE15RedSocial
             mensaje.Emisor = usuarioEmisor.Id;
             mensaje.Receptor = usuarioReceptor.Id;
             mensaje.Estampa = DateTime.Now;
-            mensaje.Multimedia = "T";
+            if (FileUpload1.HasFile)
+            {
+                string strname = FileUpload1.FileName.ToString();
+                FileUpload1.PostedFile.SaveAs(Server.MapPath("~/Multimedia/") + strname);
+                mensaje.Multimedia = strname;
+            }
+            else {
+                mensaje.Multimedia = "";
+            }
             if (bl_mensaje.AgregarMensaje(mensaje))
             {
                 Response.Redirect(Request.RawUrl);

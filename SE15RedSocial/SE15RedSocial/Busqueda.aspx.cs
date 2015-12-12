@@ -30,8 +30,6 @@ namespace SE15RedSocial
                 {
                     usuario.Correo = (string)Session["correoparabuscar"];
                 }
-                usuario = (Usuario)(Session["usuario_logueado"]);
-                ((MPRedSocial)this.Master).LnkPerfil = usuario.Correo;
                 CargarDatos();
             }
             

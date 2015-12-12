@@ -39,7 +39,7 @@ namespace SE15RedSocial
 
         if (bl_usuario.AgregarUsuario(usuario))
         {
-           ShowPopUpMsg("Usuario agregado con éxito.");
+           ShowPopUpMsg("Usuario agregado con éxito");
            Response.Redirect("Login.aspx");
         }
         else

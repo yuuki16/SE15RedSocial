@@ -15,6 +15,7 @@ namespace BL
         private Boolean resultado = false;
         private DAO_Solicitud dao_solicitud = new DAO_Solicitud();
         private DataTable dt = new DataTable();
+
         public Boolean ObtenerIDUsuarrio(Solicitud solicitud)
         {
             
@@ -69,6 +70,22 @@ namespace BL
             try
             {
                 resultado = dao_solicitud.ModificarSolicitud(solicitud);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+
+            return resultado;
+
+        }
+
+        public Boolean AceptarSolicitud(Solicitud solicitud)
+        {
+
+            try
+            {
+                resultado = dao_solicitud.AceptarSolicitud(solicitud);
             }
             catch (Exception ex)
             {

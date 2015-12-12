@@ -63,6 +63,7 @@
     <Content Include="imgs\check.ico" />
     <Content Include="imgs\profile.ico" />
     <Content Include="imgs\RedSocial.png" />
+    <Content Include="imgs\usuario.png" />
     <Content Include="Login.aspx" />
     <Content Include="Mensajes.aspx" />
     <Content Include="Perfil.aspx" />
@@ -154,6 +155,7 @@
   <ItemGroup>
     <Folder Include="Content\" />
     <Folder Include="css\" />
+    <Folder Include="Multimedia\" />
     <Folder Include="Scripts\" />
   </ItemGroup>
   <PropertyGroup>

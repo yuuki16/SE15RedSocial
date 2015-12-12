@@ -19,7 +19,6 @@ namespace SE15RedSocial
         private Solicitud solicitud = new Solicitud();
         private Usuario usuario = new Usuario();
         private Boolean resultado = false;
-        private string usuario_correo;
         private DataTable dt = new DataTable();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -86,12 +85,5 @@ namespace SE15RedSocial
             Session["usuario_logueado"] = usuario;
             
         }
-
-        private Boolean ObtenerMensajes()
-        {
-
-            return resultado;
-        }
-
-    }
+            }
 }

@@ -16,6 +16,12 @@
                     <asp:Button ID="btnEnviar" runat="server" Text="Enviar" Style="width: 100px; height: 45px;" OnClick="btnEnviar_Click" />
                 </td>
             </tr>
+            <tr>
+                <td>
+                    <asp:FileUpload ID="FileUpload1" runat="server" Width="287px" />
+                </td>
+                
+            </tr>
         </table>
     </div>
 </asp:Content>

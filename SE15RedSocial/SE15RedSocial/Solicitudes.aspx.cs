@@ -20,15 +20,20 @@ namespace SE15RedSocial
         private DataSet ds = new DataSet();
         private DataTable dt = new DataTable();
         private DataTable dtUs = new DataTable();
-
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-            //Session["usuario_logueado"] = null;
-            usuario = (Usuario)(Session["usuario_logueado"]);
-            ((MPRedSocial)this.Master).LnkPerfil = usuario.Correo;
 
-            CargarDatos();
+            if (Page.IsPostBack == false)
+            {
+
+                //Session["usuario_logueado"] = null;
+                usuario = (Usuario)(Session["usuario_logueado"]);
+                ((MPRedSocial)this.Master).LnkPerfil = usuario.Correo;
+                
+                CargarDatos();
+            
+            }
             
         }
 
@@ -44,7 +49,8 @@ namespace SE15RedSocial
                 {
                     foreach (DataRow dtRow in dt.Rows)
                     {
-                        usuario.Id = (int)dtRow["sl_emisor"];
+                        usuario.Id = (int) dtRow["sl_emisor"];
+                        solicitud.Emisor = (int) dtRow["sl_emisor"];
                     }
                     dtUs = bl_usuario.ObtenerDatosUsuario(usuario);
                     dt.Merge(dtUs, true);
@@ -52,44 +58,51 @@ namespace SE15RedSocial
                     grdSolicitudes.DataSource = dt;
                     grdSolicitudes.DataBind();
 
-                    //grdSolicitudes.
-
                     Session["Datos"] = dt;
-                    
-                    
-                    
+
+                    Session["usuario"] = usuario;
+
+                    Session["solicitud"] = solicitud;
+
                 }
             }
             catch (Exception ex)
             {
 
-                throw new Exception("Error");
+                throw new Exception(ex.Message);
             }
         }
         
         protected void grdBusqueda_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
 
-            //rechazar
-            solicitud.Estado = "Rechazado";
+            //rechazar solicitud
+            solicitud.Estampa = DateTime.Now;
             if (bl_solicitud.EliminarSolicitud(solicitud))
             {
                 //La solicitud se rechazo
-            }
+           }
             else
             {
                 //Error
             }
-            
         }
 
         protected void grdSolicitudes_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-            //aceptar
-            solicitud.Estado = "Aceptado";
-            if (bl_solicitud.ModificarSolicitud(solicitud))
+
+            //aceptar solicitud
+
+            usuario = (Usuario) Session["usuario"];
+            solicitud = (Solicitud)Session["solicitud"];
+
+            Session["solicitud"] = solicitud;
+
+            solicitud.Estampa = DateTime.Now;
+            if (bl_solicitud.AceptarSolicitud(solicitud))
             {
-                //La solicitud se rechazo
+                //La solicitud se aceptó
+                Response.Redirect(Request.RawUrl);
             }
             else
             {

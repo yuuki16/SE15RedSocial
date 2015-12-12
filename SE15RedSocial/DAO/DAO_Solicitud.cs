@@ -107,7 +107,6 @@ namespace DAO
                     SqlCommand comando = new SqlCommand(sql, conn.conn);
                     comando.Parameters.AddWithValue("@p_sl_emisor", solicitud.Emisor);
                     comando.Parameters.AddWithValue("@p_sl_receptor", solicitud.Receptor);
-                    comando.Parameters.AddWithValue("@p_sl_estado", solicitud.Estado);
                     comando.Parameters.AddWithValue("@p_sl_estampa", solicitud.Estampa);
                     comando.CommandType = CommandType.StoredProcedure;
                     comando.ExecuteNonQuery();
@@ -156,7 +155,6 @@ namespace DAO
                     SqlCommand comando = new SqlCommand(sql, conn.conn);
                     comando.Parameters.AddWithValue("@p_sl_emisor", solicitud.Emisor);
                     comando.Parameters.AddWithValue("@p_sl_receptor", solicitud.Receptor);
-                    comando.Parameters.AddWithValue("@p_sl_estado", solicitud.Estado);
                     comando.Parameters.AddWithValue("@p_sl_estampa", solicitud.Estampa);
                     comando.CommandType = CommandType.StoredProcedure;
                     comando.ExecuteNonQuery();
